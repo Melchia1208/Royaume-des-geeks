@@ -1,0 +1,14 @@
+body {
+    background: #ccc;
+}
+
+#ContainerBase {
+    background: #eee;
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+#navbar {
+    font-size: 20px;
+}
+
