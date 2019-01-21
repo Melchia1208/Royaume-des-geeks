@@ -8,7 +8,16 @@ body {
     padding-right: 0px;
 
 }
-#navbar {
-    font-size: 20px;
+.nav-link {
+    font-size: 20px !important;
+    border-right: 2px solid white !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+#lastNav{
+    border: none !important;
+
+
 }
 
