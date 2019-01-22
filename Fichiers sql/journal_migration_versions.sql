@@ -1,0 +1,1 @@
+INSERT INTO journal.migration_versions (version) VALUES ('20190122135126');
