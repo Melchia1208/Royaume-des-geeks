@@ -2,7 +2,7 @@ body {
     background: #ccc;
 }
 
-#ContainerBase {
+.container {
     background: #eee;
     padding-left: 0px;
     padding-right: 0px;
