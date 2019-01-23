@@ -27,8 +27,11 @@
             <ul class="navbar-nav mr-auto my-1" id="navbar2">
                 <li class="nav-item {% if page == 'accueil' %} active {% endif %}">
                     <a class="nav-link px-3" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
 
+                </li>
+                <li class="nav-item {% if page =='news' %} active {% endif %}">
+                    <a class="nav-link px-3" href="#">News</a>
+                </li>
                 <li class="nav-item {% if page =='journal' %} active {% endif %}">
                     <a class="nav-link px-3" href="{{ path('journal') }}">Journal de Bord du Capitaine</a>
                 </li>
