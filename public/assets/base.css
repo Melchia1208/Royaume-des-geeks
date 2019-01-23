@@ -17,7 +17,15 @@ body {
 
 #lastNav{
     border: none !important;
+}
 
+#navAdmin{
+    color: lightgrey;
+    border: none !important;
+}
 
+#navAdmin:hover{
+    color: white;
+    border: none !important;
 }
 
