@@ -4,15 +4,13 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
-use App\Repository\LivresRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LivresController extends AbstractController
+class ArticleController extends AbstractController
 {
 
-    private $livresRepository;
     private $objectManager;
     private $articleRepository;
     private $categoryRepository;
@@ -20,29 +18,37 @@ class LivresController extends AbstractController
     public function __construct(
         ObjectManager $objectManager,
         ArticleRepository $articleRepository,
-        CategoryRepository $categoryRepository,
-        LivresRepository $livresRepository)
+        CategoryRepository $categoryRepository)
     {
         $this->articleRepository = $articleRepository;
         $this->objectManager = $objectManager;
         $this->categoryRepository = $categoryRepository;
-        $this ->livresRepository = $livresRepository;
 
     }
+
+
     /**
-     * @Route("/livres", name="livres")
+     * @param $category
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/article/{category}", name="article")
      */
-    public function index()
+    public function index($category)
     {
-        $livres = $this->livresRepository->findAll();
         $categories = $this->categoryRepository->findAll();
 
+        $id = $this->categoryRepository->findBy(['name' => $category]);
+        $articles = $this->articleRepository->findBy(['category' => $id]);
 
-        return $this->render('livres/index.html.twig', [
-            'controller_name' => 'LivresController',
-            'livres' => $livres,
-            'page' => 'livres',
+
+
+
+
+        return $this->render('article/index.html.twig', [
+            'controller_name' => 'ArticleController',
+            'page' => $category,
+            'articles' => $articles,
             'categories' => $categories,
+            'name' => $category,
         ]);
     }
 }

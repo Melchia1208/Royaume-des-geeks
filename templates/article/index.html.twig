@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Journal de Bord du Capitaine{% endblock %}
+
+{% block body %}
+
+    <div class="article" style="background-color: lightgray">
+        <h1 class="pt-3 pb-4" align="center">Liste des articles de la catégorie : <span style="font-weight:bold ">{{ name }}</span></h1>
+        <div class="row mx-2">
+            {% for article in articles %}
+
+                <div class="col-6">
+
+                    <div class="card mb-3"  style="width: 100%; background-color: #999999">
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="card-img mt-3 ml-3 " src="/assets/uploads/{{ article.image }}" alt="Card image cap" width="auto">
+                            </div>
+                            <div class="col-7">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ article.title }}</h3>
+                                    <p class="card-text">{{ article.subtitle }}</p>
+                                    <div align="center">
+                                        <a href="#" class="btn btn-primary">Lire l'article</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

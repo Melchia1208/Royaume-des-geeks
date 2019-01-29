@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Listage de la structure de la base pour journal
+-- Listage de la structure de la base pour article
 CREATE DATABASE IF NOT EXISTS `journal` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `journal`;
 
--- Listage de la structure de la table journal. livres
+-- Listage de la structure de la table article. livres
 CREATE TABLE IF NOT EXISTS `livres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `livres` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table journal.livres : ~2 rows (environ)
+-- Listage des données de la table article.livres : ~2 rows (environ)
 /*!40000 ALTER TABLE `livres` DISABLE KEYS */;
 INSERT INTO `livres` (`id`, `nom`, `image`, `resume`, `lien`) VALUES
 	(1, 'Les Témoins du Temps', 'Les témoins du temps.jpg', 'Leslie est une jeune femme comme les autres, du moins c’est ce qu’elle croit...<br>\r\nSans le savoir, elle possède certaines capacités hors normes dont elle se sert pour aider les gens, parfois même en leur sauvant la vie. <br>\r\nC’est ce qui lui vaut d’être repérée par le colonel Campbell. Après l’avoir observée à chaque moment crucial de sa vie, il décide de lui proposer de se joindre à son équipe d’élite. Leur objectif : étudier mais surtout protéger le temps.<br>\r\nSceptique au début, Leslie se laissera pourtant convaincre de le suivre et se retrouvera plongée dans un conflit temporel sans précédent.<br>\r\nCar un redoutable ennemi disparu depuis près d’un millénaire refait surface, bien décidé à modifier le passé à son avantage. Un groupuscule qui ne recule devant rien.<br>\r\nLa Confrérie des Assassins', 'https://www.amazon.fr/T%C3%A9moins-du-Temps-Damien-Bournac/dp/1445263106'),
