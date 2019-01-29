@@ -48,4 +48,9 @@ li {
     list-style: none;
 }
 
-
+/*
+ !!!!!!!!!!!!!  boutton input upload image   !!!!!!!!!!!!!!!
+ */
+.custom-file-input ~ .custom-file-label::after {
+    content: 'cliquez pour ajouter votre image';
+}
