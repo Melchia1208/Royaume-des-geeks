@@ -44,11 +44,39 @@ class ArticleController extends AbstractController
 
 
         return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
             'page' => $category,
             'articles' => $articles,
             'categories' => $categories,
             'name' => $category,
         ]);
+    }
+
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/article/show/{id}", name="article_show")
+     */
+    public function show($id){
+
+        $article = $this->articleRepository->find($id);
+        $category = $this->categoryRepository->find(['id'=>$article->getCategory()]);
+        $nomCategorie = $category->getName();
+
+        $categories = $this->categoryRepository->findAll();
+        $link = $article->getVideolink();
+
+            $videotab = explode('watch?v=', $link);
+
+
+
+
+        return $this->render('article/show.html.twig', [
+            'page' => $nomCategorie,
+            'article' => $article,
+            'categories' => $categories,
+            'videotab' => $videotab,
+
+        ]);
+
     }
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Journal de Bord du Capitaine{% endblock %}
+{% block title %}{{ name }}{% endblock %}
 
 {% block body %}
 
@@ -11,7 +11,7 @@
 
                 <div class="col-6">
 
-                    <div class="card mb-3"  style="width: 100%; background-color: #999999">
+                    <div class="card mb-3"  style="width: 100%; background-color: darkgray">
                         <div class="row">
                             <div class="col-5">
                                 <img class="card-img mt-3 ml-3 " src="/assets/uploads/{{ article.image }}" alt="Card image cap" width="auto">
@@ -21,7 +21,7 @@
                                     <h3 class="card-title">{{ article.title }}</h3>
                                     <p class="card-text">{{ article.subtitle }}</p>
                                     <div align="center">
-                                        <a href="#" class="btn btn-primary">Lire l'article</a>
+                                        <a href="{{ path('article_show', {'id' : article.id}) }}" class="btn btn-primary">Lire l'article</a>
                                     </div>
                                 </div>
                             </div>

@@ -15,17 +15,19 @@
         {{ form_start(form) }}
 
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 {{ form_row(form.title) }}
                 {{ form_row(form.subtitle) }}
-                {{ form_row(form.body) }}
-
-            </div>
-            <div class="col">
-                {{ form_row(form.category) }}
                 {{ form_row(form.image) }}
                 {{ form_row(form.videolink) }}
-                {{ form_row(form.save) }}
+                {{ form_row(form.category) }}
+                <div align="center">
+                    {{ form_row(form.save) }}
+                </div>
+
+            </div>
+            <div class="col-8">
+                {{ form_row(form.body) }}
             </div>
         </div>
 
@@ -36,13 +38,11 @@
 {% block javascripts %}
     <script>
 
-        //////////////////////////////////////////////////////
-        // Placement du nom de l'image uploadé dans l'input //
-        //////////////////////////////////////////////////////
-
         $('.custom-file-input').on('change',function(){
             var fileName = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
             $(this).parent('.custom-file').find('.custom-file-label').text(fileName);
         });
     </script>
+
+
 {% endblock %}

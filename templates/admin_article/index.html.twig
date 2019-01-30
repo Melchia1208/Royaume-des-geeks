@@ -23,6 +23,7 @@
             <th>Titre</th>
             <th>Sous-titre</th>
             <th>Catégorie</th>
+            <th>Lien de la vidéo</th>
         </tr>
         </thead>
         <tbody>
@@ -32,6 +33,7 @@
                 <td>{{ article.title }}</td>
                 <td>{{ article.subtitle }}</td>
                 <td>{{ article.category.name }}</td>
+                <td><a href="{{ article.videolink }}" target="_blank" style="color: dodgerblue">{{ article.videolink }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
