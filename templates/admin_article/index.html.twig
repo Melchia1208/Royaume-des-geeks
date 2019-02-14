@@ -1,0 +1,42 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper mb-5">
+        <h1>Gestion des articles</h1>
+        <div class="text-right" >
+            <div class="btn btn-primary mt-5" onclick="window.location.href ='{{ path('admin_create_article') }}'">Créer un nouvel article</div>
+        </div>
+    </div>
+
+    <table id="myTable" class="display">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Sous-titre</th>
+            <th>Catégorie</th>
+            <th>Lien de la vidéo</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.subtitle }}</td>
+                <td>{{ article.category.name }}</td>
+                <td><a href="{{ article.videolink }}" target="_blank" style="color: dodgerblue">{{ article.videolink }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
